@@ -1,0 +1,15 @@
+{% extends 'base.html'%}
+
+{% block content %}
+<h1>To-Do List</h1>
+
+    <p>Task: {{ tasks.task_name }}</p>
+    <p>Due Date: {{ tasks.due_date }}</p>
+    <p>Creation Date: {{ tasks.creation_date }}</p>
+    <p>Completion Date: {{ tasks.completion_date }}</p>
+    <p>Status: {{ tasks.status }}</p>
+    <hr>
+    <p><a href="{% url 'deleteview' id=tasks.id %}"><button name="delete">Delete</button></a>
+    <a href="{% url 'editview' id=tasks.id %}"><button name="edit">Edit</button></a></p>
+
+{% endblock content %}
